@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "cliente_id": 1,
+        "produto": "Chá",
+        "preco": 30,
+        "quantidade": 2
+    },
+    {
+        "id": 2,
+        "cliente_id": 1,
+        "produto": "Café",
+        "preco": 45,
+        "quantidade": 2
+    },
+    {
+        "id": 3,
+        "cliente_id": 2,
+        "produto": "Chia",
+        "preco": 30,
+        "quantidade": 1
+    },
+    {
+        "id": 4,
+        "cliente_id": 3,
+        "produto": "Arroz",
+        "preco": 45,
+        "quantidade": 3
+    }
+]

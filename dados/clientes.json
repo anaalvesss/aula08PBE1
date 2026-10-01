@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "cpf": "111.222.333-44",
+        "nome": "Leticia Souza"
+    },
+    {
+        "id": 2,
+        "cpf": "112.221.333-43",
+        "nome": "Beatriz Alves"
+    },
+    {
+        "id": 3,
+        "cpf": "222.333.444-55",
+        "nome": "Sara de Paula  "
+    }
+]
