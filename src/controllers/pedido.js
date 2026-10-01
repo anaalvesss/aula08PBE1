@@ -9,7 +9,12 @@ function calcTotais() {
 const criar = (req, res) => {
     const dados = req.body
 
-    dados.id = Number(pedidos[pedidos.length - 1].id) + 1
+    const novoId = pedidos.length > 0
+        ? Number(pedidos[pedidos.length - 1].id) + 1
+        : 1
+
+    dados.id = novoId
+    dados.total = dados.quantidade * dados.preco
 
     pedidos.push(dados)
 
@@ -23,11 +28,40 @@ const listar = (req, res) => {
 }
 
 const alterar = (req, res) => {
-    res.json("Em alteração")
+    const id = Number(req.params.id)
+    const indice = pedidos.findIndex(p => Number(p.id) === id)
+
+    if (indice === -1) {
+        return res.status(404).json({
+            mensagem: "Pedido não encontrado"
+        })
+    }
+
+    pedidos[indice] = {
+        ...pedidos[indice],
+        ...req.body,
+        id: pedidos[indice].id
+    }
+
+    pedidos[indice].total =
+        pedidos[indice].quantidade * pedidos[indice].preco
+
+    res.json(pedidos[indice])
 }
 
 const excluir = (req, res) => {
-    res.json("Em alteração")
+    const id = Number(req.params.id)
+    const indice = pedidos.findIndex(p => Number(p.id) === id)
+
+    if (indice === -1) {
+        return res.status(404).json({
+            mensagem: "Pedido não encontrado"
+        })
+    }
+
+    const pedidoExcluido = pedidos.splice(indice, 1)
+
+    res.json(pedidoExcluido[0])
 }
 
 module.exports = {
