@@ -16,5 +16,13 @@ router.post('/pedidos', Pedido.criar)
 router.delete('/pedido/:id', Pedido.excluir)
 router.put('/clientes/:id', Cliente.alterar)
 router.delete('/clientes/:id', Cliente.excluir)
+router.get('./produtos', Produto.listar)
+router.post('./produtos', Produto.criar)
+router.delete('./produtos', Produto.excluir)
+router.put('./produtos', Produto.alterar)
+router.get('./itens', Item.listar)
+router.post('./itens', Item.criar)
+router.delete('./itens', Item.excluir)
+router.put('itens', Item.alterar)
 
 module.exports = router
